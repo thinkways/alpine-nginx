@@ -1,5 +1,4 @@
-
-FROM ej52/alpine-base:3.4
+FROM alpine:latest
 LABEL maintainer Elton Renda "elton@ebrdev.co.za"
 
 VOLUME ["/var/cache/nginx"]
@@ -16,9 +15,9 @@ RUN \
 
     # download unpack nginx-src
     && mkdir /tmp/nginx && cd /tmp/nginx \
-    && wget http://nginx.org/download/nginx-1.13.1.tar.gz \
-    && tar xzf nginx-1.13.1.tar.gz \
-    && cd nginx-1.13.1 \
+    && wget http://nginx.org/download/nginx-1.19.0.tar.gz \
+    && tar xzf nginx-1.19.0.tar.gz \
+    && cd nginx-1.19.0 \
 
     #compile
     && ./configure \
